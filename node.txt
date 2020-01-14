@@ -1,0 +1,214 @@
+Java Script:
+
+It is client side scripting language
+It is used to create dynamic web pages
+It is used to detect the capability of browser
+we can work with cookies
+it is used for validations
+
+What is the difference between Node js and Java which one is better?
+
+-->Node js allows non-blocking requests and it has only single thread
+  where only one thread can handle all the requests.
+*non-blocking requests- where the requests doesnot depends on
+other requests
+-->Java is a multiple threaded ,it allows blocking requests(
+ where one req executes on ans of the prior request) bcoz of
+this waiting happens so it may be slow
+
+Node js:
+ It was created by Ryan Dahl (2009) started used in linux
+It is an open source for runtime env for developing serve side app
+Evented I/O for JS
+runs on google's v8 JS engine
+it's goal to provide an easy way to build scalable network prgrms
+it uses single threaded uses asynchronus io
+////////////////////////////////////////////////////////////////////
+Js Runtime(Not alanguage or a frameeork)
+essentially allows us to run Js code on the server
+As it is asynchronous it allows 10 thousand concurrent connections 
+
+
+-------------------------unique about node js:
+It is fast,efficient and highly scalable
+1)Js used in client side apps but node js is used to put JS on 
+server side thus making communication between client and server will
+be in same language
+2)Generally severs are thread based but node.js is event based
+node.js serves each request in a evented loop that can be able
+to handle simultaneous requests.
+3) it is executed on v8 JS engine which is used in google chrome browser 
+which is very faast.
+
+---------------------------------why to use node.js:
+It's fast
+it can handle tons of concurrent requests
+it's written in JS (which means you can use the same code on both server and client side)
+
+-----------------NMP--------------------
+it is used to install third party packages like frameworks,libraries,tools...etc
+packages get stored in node_modules folder
+npm init   all dependencies are listed in a 'package.json' file
+
+
+--------Installation ----------
+go to nodejs.org from there install latest version of node js
+then install any IDE(visual studion or any other)
+
+
+-------hello world program-------\
+----------//using inbuilt modules
+//var xxx=require(module name);
+var http=require('http');
+
+Category	Description
+2xx: Success	Indicates that the client's request was accepted successfully.
+3xx: Redirection	Indicates that the client must take some additional action in order to complete their request.
+4xx: Client Error	This category of error status codes points the finger at clients.
+//create server
+//http.createServer(function).listen(port)
+http.createServer((request,response)=>{
+//it can set headers
+response.writeHead('Content-Type':'text/plain','Content-length':body.length(//which has some value));
+response.end(any message)//any you want to display or any implementation to display
+}).listen(4000)
+
+--------------------global bject
+like setTimeInterval,console,setTimeOut,clearTimeInterval
+//according to usage we will use it
+//---------------custome Modules
+
+app1.js-->write the methods and export it
+var hello={
+customeModuleMethod1:()=>{
+    return"THis is how to export user defined modules";
+},
+customeModuleMethod2:()=>{
+    return"THis is how to export user defined modules..........";
+}}
+module.exports=hello;
+app2.js-->use that here by using require
+var cust=require('./customeModules.js');
+console.log(cust.customeModuleMethod2());
+console.log(cust.customeModuleMethod1());
+
+-----------fs module 
+// to get the directory path
+const directoryPath = path.join(__dirname);
+// to get the file path
+const directoryPath = path.join(__dirname,'file name');
+//i.e, to read or write from any text files
+// to read from any file
+fs.readFile('filename','utf8',callback function);
+callback function is
+(err,data)=>{
+if(err)
+return console.error(err)
+console.log(data);}
+//to write into any file
+fs.writeFile('new Filename","content to be written in that file",callbackfunction)
+
+//to delete any file
+fs.unlink('note3.txt');
+ 
+//to delete any folder
+fs.rmdirSync('node');
+
+
+//to check whether file exist or not
+
+var fileName='note3.txt'
+try {
+    if (fs.exists(fileName,(exists)=>{
+      console.log(exists?fs.unlink(fileName):'file doesnot exist');}))   
+          console.log('hi')}
+    catch(err) {
+    console.error(err)
+  }
+//to check whether file or directory exist or mot we use
+fs.istat(path)
+//to check whether it is a file
+fs.lstatSync(file).isFile()
+//to check it is a directey
+fs.lstatSync(file).isDirectory()
+Event Emitter:
+As node js runs in asynchronous manner it require event-driven
+archietecture
+so node API has event module
+var events=require('events');
+ next create a instance of EventEmitter
+var eventEmitter=new events.EventEmitter();
+eventEmitter.on(keyword/databaequeries,callback func);
+eventEmitter.emit(keyword,this can be argument of the above call func);
+eventEmitter.on('clicked',(button)=>{
+    console.log(button+'is clicked');
+
+})
+eventEmitter.emit('clicked','button1');
+o/p:
+button1 is clicked
+ Util Module:
+It has so many functionalities in this we are using inherits
+var util=require('util');
+util.inherits(class which is inheriting,main class);
+util.inherits(Students,events.EventEmitter);
+before that create a Students which has a function
+then inherit events
+use on and emit methods
+
+Streams:
+These are UNIX pipe that lets you read data from a source and
+dato to destination
+It is used to read a data from very large file
+we can read that data in smaller portions and it gives info about
+how much you read and how much to be read
+we can do many events using this
+As it is reading a file we use filesystem
+var fs=require('fs');
+nxt use createReadStream(filename,'utf8');
+nxt use 'on' event methods
+
+Pipe:
+IT is used to read and write a file without managing the flow
+By using this we can send stream data to browser
+
+Nodemon:
+Whenever we change anything in our files it automatically restart
+the server 
+-g-->it install globally
+-save -->it saves the module in the package.son
+Templating Engines:
+Underscore,toffee,in this we are using EJs or embedded js
+install ejs
+then set and render
+
+Dates display:
+moment("2019-11-21T12:46:42.028")------console.log(moment(new Date()));//using moment module
+Thu Nov 21 2019 12:46:13 GMT+0530 (India Standard Time)----moment(new Date()).toDate();// using moment module
+2019-11-21: 12:43------------------------strftime('%Y-%m-%d: %H:%M',new Date());//using strftime module
+ Path module:
+console.log(path.basename(__filename));
+o/p:usingCustomeModule.js
+console.log(path.dirname(__filename));
+o/p:C:\Users\khbegum\Documents\NodePractice\myApp
+console.log(path.parse(__filename).base);
+o/p:usingCustomeModule.js
+console.log(path.join(__dirname,'test','hello.html');
+o/p:C:\Users\khbegum\Documents\NodePractice\myApp\test\hello.html
+
+//to run nodemon  write this in package.json 
+ "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+In terminal fire "npm run dev"
+
+
+Synchrous means set of instructions which will get executed in sequence. There is an order here.
+
+In asynchronous you can execute multiple things in parallel.
+
+
+
+
+

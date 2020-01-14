@@ -1,0 +1,40 @@
+Oops:
+Object oriented programming language
+->Object-Oriented Programming is a methodology 
+ to design a program using classes and objects.
+Some concepts:
+1.Object:it is a instance of a class
+2.class:It is a collection of methods and variables
+3.Inheritance:It is to acquire the methods and 
+              variables from parent or super class.
+The relationship between the two classes is Programmer IS-A Employee.
+Types of inheritance:Single level,mutli level,hybrid level
+Hierarchial level,multiple level
+*Note: Multiple inheritance is not 
+supported in Java through class.
+Reason:To reduce the complexity and simplify the language, 
+multiple inheritance is not supported in java.
+**Aggregation in Java:If a class have an entity reference, it is known as Aggregation.
+ Aggregation represents HAS-A relationship.
+example:
+class Employee{  
+int id;  
+String name;  
+Address address;//Address is a class  
+...  
+}  
+4.Abstraction:Abstraction lets you focus on what the object
+ does instead of how it does it.
+5.Encapsulation:Capsulating or covering logical things
+Generaly it act as a cover even a class is a encapsulation ,as
+it covers variables i.e,properties and methods
+6.Polymorphism:object behaves different in different situations
+Types:1)Method overloading,2)Method overriding
+1)Method which has same method but different parameters-overloading
+2)Method which has same method name but different implementation-overriding
+*Covariant Return Type :It is a return type overloading process
+In which methods name will be same but different return type
+and different parameters as it is a overloading
+*The super keyword can also be used to invoke parent class method and parent class variables.
+
+

@@ -1,0 +1,60 @@
+Express
+
+A web appliction framework for node
+-->It is minimal and flexible
+--<It is great for building web API's
+-->Popular services built on Express i.e, Myspace ,Ghost aand many more
+-->Foundation for other tools and frameworks, like Kraken
+  and sails JS
+--------------installation------------------------ 
+
+npm install express
+
+Mongoose is an ODM (Object Document Mapping) tool for Node.js and MongoDB.
+ It helps you convert the objects in your code to documents in the database 
+and vice versa.
+Mongoose is ORM(object relational mapper)
+It is used manage the object of data in between node js code
+ and Db
+==> body-parser is a module that parses the request (of various content types) 
+and creates a req.body object that we can access in our routes.
+//Installation 
+npm i mongoose
+//initialization
+const mongoose=require('mongoose');
+//create connection
+mongoose.connect('mongodb://localhost/nodekb');
+
+///////////////////////////////////// another way
+// Configuring the database
+const dbConfig = require('./config/database.config.js');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+// Connecting to the database
+mongoose.connect(dbConfig.url, {
+    useNewUrlParser: true
+}).then(() => {
+    console.log("Successfully connected to the database");    
+}).catch(err => {
+    console.log('Could not connect to the database. Exiting now...', err);
+    process.exit();
+});
+
+PUG isa a template engine, formerly known as "Jade"
+Instead of HTML tags it use 'indentation'
+
+//TO install bower 
+npm install bower -g
+then install
+"bower install bootstrap"
+If the above command doesnot executes then
+change path in environmental variable by
+ "C:\Users\khbegum\AppData\Roaming\npm"
+then refresh the cmd prompt and install
+ whatever you want using bower
+
+
+
+
